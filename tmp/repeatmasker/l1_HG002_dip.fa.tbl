@@ -1,0 +1,50 @@
+==================================================
+file name: l1_HG002_dip.fa          
+sequences:           868
+total length:    1080904 bp  (1080904 bp excl N/X-runs)
+GC level:         40.27 %
+bases masked:     872998 bp ( 80.77 %)
+==================================================
+               number of      length   percentage
+               elements*    occupied  of sequence
+--------------------------------------------------
+SINEs:              410        88469 bp    8.18 %
+      ALUs          374        83588 bp    7.73 %
+      MIRs           36         4881 bp    0.45 %
+
+LINEs:              792       648355 bp   59.98 %
+      LINE1         747       638351 bp   59.06 %
+      LINE2          38         9113 bp    0.84 %
+      L3/CR1          5          604 bp    0.06 %
+
+LTR elements:       109        45191 bp    4.18 %
+      ERVL           21         9296 bp    0.86 %
+      ERVL-MaLRs     44        13126 bp    1.21 %
+      ERV_classI     38        20456 bp    1.89 %
+      ERV_classII     3         1635 bp    0.15 %
+
+DNA elements:        54        13875 bp    1.28 %
+     hAT-Charlie     24         4822 bp    0.45 %
+     TcMar-Tigger    16         4426 bp    0.41 %
+
+Unclassified:       261        48238 bp    4.46 %
+
+Total interspersed repeats:   844128 bp   78.09 %
+
+
+Small RNA:            4          376 bp    0.03 %
+
+Satellites:           7         6788 bp    0.63 %
+Simple repeats:     251        18584 bp    1.72 %
+Low complexity:      21         3122 bp    0.29 %
+==================================================
+
+* most repeats fragmented by insertions or deletions
+  have been counted as one element
+                                                      
+
+The query species was assumed to be human         
+RepeatMasker version 4.1.5 , default mode
+                                        
+run with rmblastn version 2.14.1+
+FamDB: CONS-Dfam_3.7

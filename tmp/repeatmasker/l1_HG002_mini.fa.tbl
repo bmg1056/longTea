@@ -1,0 +1,50 @@
+==================================================
+file name: l1_HG002_mini.fa         
+sequences:           897
+total length:    3142095 bp  (3142095 bp excl N/X-runs)
+GC level:         44.58 %
+bases masked:    1918879 bp ( 61.07 %)
+==================================================
+               number of      length   percentage
+               elements*    occupied  of sequence
+--------------------------------------------------
+SINEs:             2183       519055 bp   16.52 %
+      ALUs         1951       489150 bp   15.57 %
+      MIRs          231        29847 bp    0.95 %
+
+LINEs:             1324      1007422 bp   32.06 %
+      LINE1        1111       959040 bp   30.52 %
+      LINE2         180        41424 bp    1.32 %
+      L3/CR1         25         4682 bp    0.15 %
+
+LTR elements:       358       154453 bp    4.92 %
+      ERVL           77        26684 bp    0.85 %
+      ERVL-MaLRs    145        55122 bp    1.75 %
+      ERV_classI    114        63079 bp    2.01 %
+      ERV_classII    10         7335 bp    0.23 %
+
+DNA elements:       318        67854 bp    2.16 %
+     hAT-Charlie    171        30422 bp    0.97 %
+     TcMar-Tigger    80        24646 bp    0.78 %
+
+Unclassified:       316        64279 bp    2.05 %
+
+Total interspersed repeats:  1813063 bp   57.70 %
+
+
+Small RNA:           16         1552 bp    0.05 %
+
+Satellites:          37        46385 bp    1.48 %
+Simple repeats:     727        48877 bp    1.56 %
+Low complexity:      75         8752 bp    0.28 %
+==================================================
+
+* most repeats fragmented by insertions or deletions
+  have been counted as one element
+                                                      
+
+The query species was assumed to be human         
+RepeatMasker version 4.1.5 , default mode
+                                        
+run with rmblastn version 2.14.1+
+FamDB: CONS-Dfam_3.7

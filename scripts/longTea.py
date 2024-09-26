@@ -5,7 +5,7 @@ import pandas as pd
 import subprocess
 
 import modules.uniform as uniform
-import modules.repeatmasker as repeatmasker
+import modules.annotation as annotation
 
 
 
@@ -13,12 +13,9 @@ repeat_types = ["l1", "alu", "sva"]
 celllines = ["HG002", "HG005", "HG00438", "HG02257", "HG02486", "HG02622"]
 callers = ["dip", "mini", "sni"]
 
-
 repeat_type = "l1"
 cellline = "HG002"
 caller = "dip"
-
-
 
 
 os.system("mkdir -p ../tmp")
@@ -34,10 +31,6 @@ df_mini = uniform.slim_mini(repeat_type, cellline, "mini")
 df_sni = uniform.slim_sni(repeat_type, cellline, "sni")
 
 
-
-
-
-
 ######## run repeatmasker
 print("-----------------------")
 print("2) Run repeatmasker")
@@ -46,14 +39,21 @@ print("\n")
 
 os.system("mkdir -p ../tmp/repeatmasker")
 
-repeatmasker.run_repeatmasker(repeat_type, cellline, "dip", df_dip)
-repeatmasker.run_repeatmasker(repeat_type, cellline, "mini", df_mini)
-repeatmasker.run_repeatmasker(repeat_type, cellline, "sni", df_sni)
+annotation.run_repeatmasker(repeat_type, cellline, "dip", df_dip)
+annotation.run_repeatmasker(repeat_type, cellline, "mini", df_mini)
+annotation.run_repeatmasker(repeat_type, cellline, "sni", df_sni)
 
 
+"""
+with open("../tmp/repeatmasker/l1_HG002_dip.fa.out") as f:
+	tags = f.readlines()
 
+tmp = []
+for i in range(3, len(tags)):
+	tmp.append([value for value in tags[i].strip().split(" ") if value])
 
-
+tmp = pd.DataFrame(tmp)
+"""
 
 
 ######## run blastn
@@ -62,21 +62,13 @@ print("3) Run blastn")
 print("\n")
 
 
+os.system("mkdir -p ../tmp/blast")
+
+df_dip = annotation.run_blast(df_dip)
+df_mini = annotation.run_blast(df_mini)
+df_sni = annotation.run_blast(df_sni)
 
 
 
-
-
-out = open("tmp.fa", 'w')
-out.write(">%s"%"test" + "\n")
-out.write(df_dip.iloc[0]["inserted_sequence"] + "\n")
-out.close()
-
-command = "blastn -db ../blast_db/hg38_repeat.fa -query tmp.fa -outfmt 6 "
-result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-result.stdout
-
-
-os.system("blastn -db ./blast_db/hg38_repeat.fa -query ./blast_tmp/%s/%s_%s/%s.fa -outfmt 6 -out ./blast_tmp/%s/%s_%s/%s.blast"%(repeat_type, cellline, caller, filename, repeat_type, cellline, caller, filename))
 
 
